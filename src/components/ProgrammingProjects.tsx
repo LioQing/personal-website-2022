@@ -39,10 +39,10 @@ const ProgrammingProjects = () => {
           imageSrc={`${process.env.PUBLIC_URL}/images/everything-daily.png`}>
           <ProjectDetails
             languages={['C#']}
-            frameworks={['UWP', 'WINUI']}
+            frameworks={['UWP', 'WinUI']}
             type='Utility Desktop Application'
             link='https://github.com/LioQing/Everything-Daily'
-            description='A Windows application for me record my daily activities. However, I have stopped using it since April 2022 as I plan to improve it by turning it into a web app for cross-platform use.'/>
+            description='A Windows application for me to record my daily activities. However, I have stopped using it since April 2022 as I plan to improve it by turning it into a web app for cross-platform use.'/>
         </InfoCard>
         <InfoCard
           title='Web Portfolio'
@@ -52,7 +52,7 @@ const ProgrammingProjects = () => {
             frameworks={['React']}
             type='Website'
             link='https://github.com/LioQing/web-portfolio'
-            description='Yes, it is this project. This is the first web project I have after I started learning web development and TypeScript.'/>
+            description='Yes, it is this project. This is the first web project I did after I started learning web development frameworks and TypeScript.'/>
         </InfoCard>
       </div>
     </Body>

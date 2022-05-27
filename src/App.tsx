@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Resources from './components/Resources';
 import Sidebar from './components/Sidebar';
 import NavList from './components/NavList';
 import SidebarToggle from './components/SidebarToggle';
@@ -27,25 +28,21 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <style>{`
-          @font-face {
-            font-family: 'Open Sans';
-            src: url('${process.env.PUBLIC_URL}/fonts/OpenSans.ttf') format('truetype');
-          }`}
-        </style>
+        <Resources />
         <style>{style}</style>
       </Helmet>
       <ThemeContextProvider theme={theme} setTheme={setTheme}>
         <div style={{
-          height: '72px',
-        }} />
-
-        <Body>
-          {theme === Theme.Dark
-            ? <DarkNameLogo />
-            : <LightNameLogo />
-          }
-        </Body>
+          marginTop: 128,
+          marginBottom: 72,
+        }}>
+          <Body>
+            {theme === Theme.Dark
+              ? <DarkNameLogo />
+              : <LightNameLogo />
+            }
+          </Body>
+        </div>
 
         <Sidebar isSidebarOpen={isSidebarOpen}>
           <NavList />
