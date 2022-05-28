@@ -12,8 +12,7 @@ const Sidebar = ({ isSidebarOpen, children }: Props) => {
       in={isSidebarOpen}
       timeout={200}
       classNames='sidebar'
-      unmountOnExit
-    >
+      unmountOnExit>
       {children}
     </CSSTransition>
   );

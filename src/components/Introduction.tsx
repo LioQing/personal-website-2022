@@ -1,4 +1,5 @@
 import Body from './Body';
+import SocialLinks from './SocialLinks';
 
 const Introduction = () => {
   return (
@@ -9,6 +10,7 @@ const Introduction = () => {
         Nationality: Hong Kong China<br />
         Languages: Chinese (Mandarin &#38; Cantonese), English
       </p>
+      <SocialLinks />
     </Body>
   )
 };

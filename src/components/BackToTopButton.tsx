@@ -2,40 +2,31 @@
 
 import { useContext } from 'react';
 import { themeColors, ThemeContext } from '../context/theme';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ToolTip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import '../styles.css';
 
-interface Props {
-  isSidebarOpen: boolean;
-  setIsSidebarOpen: (isSidebarOpen: boolean) => void;
-}
-
-const SidebarToggle = ({isSidebarOpen, setIsSidebarOpen}: Props) => {
+const BackToTopButton = () => {
   const { theme } = useContext(ThemeContext);
 
-  const toggle = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
-    <ToolTip title='Toggle Sidebar'>
+    <ToolTip title='Back to Top'>
       <IconButton
         sx={{
           position: 'fixed',
           top: 32,
-          left: 48,
+          left: 144,
           width: 32,
           height: 32,
           color: themeColors[theme].color,
           transition: 'all 200ms ease',
         }}
-        onClick={toggle}>
-        <MenuRoundedIcon />
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <KeyboardArrowUpIcon />
       </IconButton>
     </ToolTip>
   );
 };
 
-export default SidebarToggle;
+export default BackToTopButton;

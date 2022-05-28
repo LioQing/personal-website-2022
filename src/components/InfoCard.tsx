@@ -14,13 +14,14 @@ const InfoCard = ({ title, imageSrc, children }: Props) => {
     <div
       style={{
         position: 'relative',
-        marginBottom: 25,
+        margin: '12px auto',
       }}
       onPointerEnter={() => setIsOpen(true)}
       onPointerLeave={() => setIsOpen(false)}>
       <div style={{
         overflow: 'hidden',
         borderRadius: 12,
+        boxShadow: '0px 0px 10px #00000088',
       }}>
         <img 
           src={imageSrc}
@@ -29,6 +30,7 @@ const InfoCard = ({ title, imageSrc, children }: Props) => {
             width: '100%',
             verticalAlign: 'middle', 
             filter: isOpen ? 'blur(4px)' : 'blur(0px)',
+            transition: 'all 200ms ease',
           }} />
       </div>
       <div className={isOpen
@@ -36,7 +38,7 @@ const InfoCard = ({ title, imageSrc, children }: Props) => {
         : 'info-card-overlay-closed'
       }>
         <div>
-          <h2 style={{ margin: '0.5rem auto' }}>{title}</h2>
+          <h2 style={{ margin: '0.7rem auto' }}>{title}</h2>
           {isOpen ? children : null}
         </div>
       </div>

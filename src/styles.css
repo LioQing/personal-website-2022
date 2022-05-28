@@ -1,6 +1,6 @@
 .sidebar-enter {
   position: fixed;
-  top: 72px;
+  top: 96px;
   left: -64px;
   width: 156px;
   transform: translateX(-10%);
@@ -9,8 +9,8 @@
 
 .sidebar-enter-active {
   position: fixed;
-  top: 72px;
-  left: 48px;
+  top: 96px;
+  left: 52px;
   width: 156px;
   opacity: 1;
   transform: translateX(0%);
@@ -19,16 +19,16 @@
 
 .sidebar-enter-done {
   position: fixed;
-  top: 72px;
-  left: 48px;
+  top: 96px;
+  left: 52px;
   width: 156px;
   opacity: 1;
 }
 
 .sidebar-exit {
   position: fixed;
-  top: 72px;
-  left: 48px;
+  top: 96px;
+  left: 52px;
   width: 156px;
   opacity: 1;
   transform: translateX(0%);
@@ -36,7 +36,7 @@
 
 .sidebar-exit-active {
   position: fixed;
-  top: 72px;
+  top: 96px;
   left: -64px;
   width: 156px;
   opacity: 0;
@@ -44,22 +44,18 @@
   transition: all 200ms ease;
 }
 
-.sidebar-toggle {
-  position: fixed;
-  top: 32px;
-  left: 48px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
+.project-row {
+  display: flex;
+  flex-direction: row;
+  margin: 48px auto;
+  text-align: center;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 32px;
-  left: 96px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
+.project-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto 12px;
 }
 
 .info-card-overlay-closed {
@@ -86,5 +82,9 @@
   background: #000000cc;
   color: white;
   overflow: hidden;
+  transition: all 200ms ease;
+}
+
+.name-logo > * {
   transition: all 200ms ease;
 }

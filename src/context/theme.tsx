@@ -28,7 +28,7 @@ export const getThemeStyle = (theme: Theme): string => {
 
   h2 {
     font-family: 'Open Sans';
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   li {

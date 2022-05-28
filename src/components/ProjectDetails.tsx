@@ -12,18 +12,18 @@ const ProjectDetails = ({ languages, frameworks, type, link, description }: Prop
       <p style={{
         margin: 12,
       }}>
-        Languages - {languages.join(', ')}
+        <i>Languages</i> - {languages.join(', ')}
         <br />
-        Tools - {frameworks.join(', ')}
+        <i>Tools</i> - {frameworks.join(', ')}
         <br />
-        Project Type - {type}
+        <i>Project Type</i> - {type}
       </p>
       {description
         ? (
           <p style={{
             margin: 12,
           }}>
-            Description
+            <i>Description</i>
             <br />
             {description}
           </p>
