@@ -58,6 +58,14 @@
   margin: auto 12px;
 }
 
+.info-card-image-frame {
+  overflow: hidden;
+  width: 320px;
+  height: 320px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px #00000088;
+}
+
 .info-card-overlay-closed {
   position: absolute;
   width: 100%;
@@ -83,6 +91,13 @@
   color: white;
   overflow: hidden;
   transition: all 200ms ease;
+}
+
+.name-logo {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
 }
 
 .name-logo > * {

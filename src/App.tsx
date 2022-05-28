@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import Resources from './components/Resources';
 import NameLogo from './components/NameLogo';
 import Sidebar from './components/Sidebar';
@@ -31,35 +32,37 @@ const App = () => {
         <Resources />
         <style>{style}</style>
       </Helmet>
-      <ThemeContextProvider theme={theme} setTheme={setTheme}>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          marginTop: 128,
-          marginBottom: 72,
-        }}>
+      <ParallaxProvider>
+        <ThemeContextProvider theme={theme} setTheme={setTheme}>
           <Body>
-            <NameLogo theme={theme}/>
+            <Parallax translateY={[-25, 25]}>
+              <div style={{
+                position: 'relative',
+                height: '100vh',
+              }}>
+                <NameLogo theme={theme}/>
+              </div>
+            </Parallax>
           </Body>
-        </div>
 
-        <Sidebar isSidebarOpen={isSidebarOpen}>
-          <NavList />
-        </Sidebar>
-        <SidebarToggle isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-        <ThemeToggle />
-        <BackToTopButton />
+          <Sidebar isSidebarOpen={isSidebarOpen}>
+            <NavList />
+          </Sidebar>
+          <SidebarToggle isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+          <ThemeToggle />
+          <BackToTopButton />
 
-        <Introduction />
-        <HorizLine />
-        <ComputerSkills />
-        <HorizLine />
-        <ProgrammingProjects />
+          <Introduction />
+          <HorizLine />
+          <ComputerSkills />
+          <HorizLine />
+          <ProgrammingProjects />
 
-        <div style={{
-          height: '40vh',
-        }} />
-      </ThemeContextProvider>
+          <div style={{
+            height: '40vh',
+          }} />
+        </ThemeContextProvider>
+      </ParallaxProvider>
     </>
   );
 };

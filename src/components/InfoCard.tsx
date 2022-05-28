@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Parallax } from 'react-scroll-parallax';
 import '../styles.css';
 
 interface Props {
@@ -18,20 +19,23 @@ const InfoCard = ({ title, imageSrc, children }: Props) => {
       }}
       onPointerEnter={() => setIsOpen(true)}
       onPointerLeave={() => setIsOpen(false)}>
-      <div style={{
-        overflow: 'hidden',
-        borderRadius: 12,
-        boxShadow: '0px 0px 10px #00000088',
-      }}>
-        <img 
-          src={imageSrc}
-          alt={title}
-          style={{
-            width: '100%',
-            verticalAlign: 'middle', 
-            filter: isOpen ? 'blur(4px)' : 'blur(0px)',
-            transition: 'all 200ms ease',
-          }} />
+      <div className='info-card-image-frame'>
+        <Parallax translateY={[-12, 12]}>
+          <img 
+            src={imageSrc}
+            alt={title}
+            style={{
+              position: 'relative',
+              // 320 is the width of card
+              left: (-364+320)/2,
+              top: (-364+320)/2,
+              width: 364,
+              height: 364,
+              verticalAlign: 'middle', 
+              filter: isOpen ? 'blur(4px)' : 'blur(0px)',
+              transition: 'all 200ms ease',
+            }} />
+        </Parallax>
       </div>
       <div className={isOpen
         ? 'info-card-overlay-opened'
