@@ -77,7 +77,7 @@ export const getThemeStyle = (theme: Theme): string => {
     body {
       background-color: ${themeColors[theme].background};
       color: ${themeColors[theme].color};
-      transition: all 200ms;
+      transition: all 200ms ease;
     }` + defaultStyles;
 };
 

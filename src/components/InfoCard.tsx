@@ -20,18 +20,16 @@ const InfoCard = ({ title, imageSrc, children }: Props) => {
       onPointerEnter={() => setIsOpen(true)}
       onPointerLeave={() => setIsOpen(false)}>
       <div className='info-card-image-frame'>
-        <Parallax translateY={[-12, 12]}>
+        <Parallax translateY={[-10, 10]}>
           <img 
             src={imageSrc}
             alt={title}
             style={{
+              display: 'inline-block',
               position: 'relative',
-              // 320 is the width of card
-              left: (-364+320)/2,
-              top: (-364+320)/2,
-              width: 364,
-              height: 364,
-              verticalAlign: 'middle', 
+              width: '120%',
+              top: '-40px',
+              left: '-10%',
               filter: isOpen ? 'blur(4px)' : 'blur(0px)',
               transition: 'all 200ms ease',
             }} />

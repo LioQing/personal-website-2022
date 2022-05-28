@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
-import Resources from './components/Resources';
 import NameLogo from './components/NameLogo';
 import Sidebar from './components/Sidebar';
 import NavList from './components/NavList';
@@ -29,7 +28,6 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <Resources />
         <style>{style}</style>
       </Helmet>
       <ParallaxProvider>
