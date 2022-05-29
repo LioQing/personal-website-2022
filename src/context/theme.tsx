@@ -8,11 +8,13 @@ export enum Theme {
 export const themeColors = {
   [Theme.Light]: {
     background: '#eeeeee',
+    frontBackground: '#dddddd',
     color: '#000000',
     accent: '#1ED954',
   },
   [Theme.Dark]: {
     background: '#222222',
+    frontBackground: '#333333',
     color: '#ffffff',
     accent: '#23ff7f',
   },
