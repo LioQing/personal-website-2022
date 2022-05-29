@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { useContext } from 'react';
 import { Theme, themeColors, ThemeContext } from '../context/theme';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
@@ -28,9 +26,15 @@ const ThemeToggle = () => {
           height: 32,
           color: themeColors[theme].color,
           transition: 'all 200ms ease',
+          '&:hover': {
+            backgroundColor: themeColors[theme].hover,
+          }
         }}
         onClick={toggle}>
-        <Icon />
+        <Icon sx={{
+          width: 24,
+          height: 24,
+        }} />
       </IconButton>
     </ToolTip>
   );

@@ -8,17 +8,19 @@ export enum Theme {
 export const themeColors = {
   [Theme.Light]: {
     background: '#eeeeee',
-    frontBackground: '#fafafa',
+    frontBackground: '#f8f8f8',
     color: '#000000',
     accent: '#1ED954',
+    hover: 'rgba(0, 0, 0, 0.04)',
   },
   [Theme.Dark]: {
     background: '#222222',
     frontBackground: '#2a2a2a',
     color: '#ffffff',
     accent: '#23ff7f',
+    hover: 'rgba(255, 255, 255, 0.08)',
   },
-}
+};
 
 export const getThemeStyle = (theme: Theme): string => {
   const defaultStyles = `

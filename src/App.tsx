@@ -10,6 +10,7 @@ import ThemeContextProvider from './components/ThemeContextProvider';
 import Introduction from './components/Introduction';
 import ComputerSkills from './components/ComputerSkills';
 import ProgrammingProjects from './components/ProgrammingProjects';
+import GraphicDesign from './components/GraphicDesign';
 import HorizLine from './components/HorizLine';
 import Body from './components/Body';
 import { Helmet } from 'react-helmet';
@@ -33,7 +34,7 @@ const App = () => {
       <ParallaxProvider>
         <ThemeContextProvider theme={theme} setTheme={setTheme}>
           <Body>
-            <Parallax translateY={[-25, 25]}>
+            <Parallax translateY={[-28, 28]}>
               <div style={{
                 position: 'relative',
                 height: '100vh',
@@ -55,6 +56,8 @@ const App = () => {
           <ComputerSkills />
           <HorizLine />
           <ProgrammingProjects />
+          <HorizLine />
+          <GraphicDesign />
 
           <div style={{
             height: '40vh',

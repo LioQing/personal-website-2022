@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { useContext } from 'react';
 import { themeColors, ThemeContext } from '../context/theme';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -30,9 +28,15 @@ const SidebarToggle = ({isSidebarOpen, setIsSidebarOpen}: Props) => {
           height: 32,
           color: themeColors[theme].color,
           transition: 'all 200ms ease',
+          '&:hover': {
+            backgroundColor: themeColors[theme].hover,
+          }
         }}
         onClick={toggle}>
-        <MenuRoundedIcon />
+        <MenuRoundedIcon sx={{
+          width: 24,
+          height: 24,
+        }} />
       </IconButton>
     </ToolTip>
   );

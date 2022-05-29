@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { useContext } from 'react';
 import { themeColors, ThemeContext } from '../context/theme';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -19,7 +17,12 @@ const SocialLinks = () => {
     <>
       <ToolTip title='GitHub Profile'>
         <IconButton
-          sx={style}
+          sx={{
+            ...style,
+            '&:hover': {
+              backgroundColor: themeColors[theme].hover,
+            }
+          }}
           href='https://github.com/LioQing'>
           <GitHubIcon fontSize='large' />
         </IconButton>
@@ -27,7 +30,12 @@ const SocialLinks = () => {
 
       <ToolTip title='LinkedIn Profile'>
         <IconButton
-          sx={style}
+          sx={{
+            ...style,
+            '&:hover': {
+              backgroundColor: themeColors[theme].hover,
+            }
+          }}
           href='https://www.linkedin.com/in/lioqyz'>
           <LinkedInIcon fontSize='large' />
         </IconButton>

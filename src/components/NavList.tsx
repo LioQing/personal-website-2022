@@ -6,6 +6,7 @@ const NavList = () => {
     'Lio Qing',
     'Computer Skills',
     'Programming Projects',
+    'Graphic Design',
   ];
 
   const getCurrHeading = () => {

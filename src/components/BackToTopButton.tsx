@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { useContext } from 'react';
 import { themeColors, ThemeContext } from '../context/theme';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -21,9 +19,15 @@ const BackToTopButton = () => {
           height: 32,
           color: themeColors[theme].color,
           transition: 'all 200ms ease',
+          '&:hover': {
+            backgroundColor: themeColors[theme].hover,
+          }
         }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <KeyboardArrowUpIcon />
+        <KeyboardArrowUpIcon sx={{
+          width: 24,
+          height: 24,
+        }} />
       </IconButton>
     </ToolTip>
   );

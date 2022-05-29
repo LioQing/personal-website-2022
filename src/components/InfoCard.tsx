@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Parallax } from 'react-scroll-parallax';
-import { useContext } from 'react';
 import { themeColors, ThemeContext } from '../context/theme';
 import Collapse from '@mui/material/Collapse';
 import Tooltip from '@mui/material/Tooltip';
@@ -31,8 +30,9 @@ const InfoCard = ({ title, imageSrc, link, children }: Props) => {
         borderRadius: 12,
         width: 325,
         margin: '25px auto',
-        backgroundColor: themeColors[theme].frontBackground,
         boxShadow: '0px 0px 16px #00000044',
+        backgroundColor: themeColors[theme].frontBackground,
+        transition: 'all 200ms ease',
       }}>
       <div style={{
         height: 325,
@@ -65,6 +65,9 @@ const InfoCard = ({ title, imageSrc, link, children }: Props) => {
             <IconButton onClick={toggle} sx={{
               color: themeColors[theme].color,
               transition: 'all 200ms ease',
+              '&:hover': {
+                backgroundColor: themeColors[theme].hover,
+              }
             }}>
               {isOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
             </IconButton>
