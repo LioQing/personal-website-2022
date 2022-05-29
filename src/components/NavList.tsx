@@ -8,17 +8,21 @@ const NavList = () => {
     'Programming Projects',
   ];
 
-  const [currHeading, setCurrHeading] = useState(HEADINGS[0]);
-
-  const updateCurrHeading = () => {
+  const getCurrHeading = () => {
     for (const [i, h] of HEADINGS.entries()) {
       const elem = document.getElementById(h);
       const rect = elem?.getBoundingClientRect();
       if (rect && rect.y + rect.height > 0) {
-        setCurrHeading(HEADINGS[i]);
-        break;
+        return HEADINGS[i];
       }
     }
+    return HEADINGS[0];
+  };
+
+  const [currHeading, setCurrHeading] = useState(getCurrHeading());
+
+  const updateCurrHeading = () => {
+    setCurrHeading(getCurrHeading());
   };
 
   window.addEventListener('scroll', () => {

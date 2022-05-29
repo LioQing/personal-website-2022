@@ -50,7 +50,7 @@ const InfoCard = ({ title, imageSrc, link, children }: Props) => {
         </Parallax>
       </div>
       <div style={{
-        margin: 20,
+        margin: 18,
       }}>
         <h2 style={{ margin: 0 }}>{title}</h2>
         <div style={{
@@ -70,7 +70,7 @@ const InfoCard = ({ title, imageSrc, link, children }: Props) => {
           </Tooltip>
         </div>
         <Collapse in={isOpen} timeout={200} easing='ease' unmountOnExit>
-          <hr style={{ margin: '20px auto' }} />
+          <hr style={{ margin: '18px auto' }} />
           {children}
         </Collapse>
       </div>
