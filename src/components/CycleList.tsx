@@ -31,7 +31,7 @@ const CycleList = ({ items }: Props) => {
           onClick={() => setIndex((index - 1 + items.length) % items.length)}
           sx={{
             width: '50px',
-            height: '540px',
+            height: '560px',
             borderRadius: '12px',
             color: themeColors[theme].color,
             backgroundColor: themeColors[theme].frontBackground,
@@ -47,18 +47,19 @@ const CycleList = ({ items }: Props) => {
           }} />
         </Button>
         <div style={{
+          position: 'relative',
+          zIndex: -1,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           width: 580,
-          height: 540,
-          overflow: 'hidden',
+          height: 560,
         }}>
           <div style={{
             display: 'flex',
             flexDirection: 'row',
-            width: 540 * items.length,
-            height: 540,
+            width: 560 * items.length,
+            height: 560,
           }}>
             {[...items.keys()]
               .map(i => i - Math.floor(items.length / 2))
@@ -66,17 +67,17 @@ const CycleList = ({ items }: Props) => {
                 <div key={i} style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  justifyContent: 'center',
-                  width: 540,
-                  height: 540,
+                  alignItems: 'center',
+                  justifyContent: 'flex-start',
+                  width: 560,
+                  height: 560,
                   opacity: i === 0 ? 1 : 0,
                 }}>
                   <div style={{
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    width: '100%',
+                    maxWidth: '100%',
                     maxHeight: '70%',
                   }}>
                     {items[(index + i + items.length) % items.length].component}
@@ -99,7 +100,7 @@ const CycleList = ({ items }: Props) => {
           onClick={() => setIndex((index + 1) % items.length)}
           sx={{
             width: '50px',
-            height: '540px',
+            height: '560px',
             borderRadius: '12px',
             color: themeColors[theme].color,
             backgroundColor: themeColors[theme].frontBackground,

@@ -23,7 +23,7 @@ const GraphicDesign = () => {
       <CycleList items={[
         {
           title: 'St. Paul\'s College Computer Society Logo',
-          description: 'I designed the logo for the Computer Society at St. Paul\'s College in 2019 as a part of the society\'s committee. The primary color being blue and the computer in the logo clearly indicates what the society does.',
+          description: 'I designed the logo for the Computer Society at St. Paul\'s College in 2019 as a part of the society\'s committee. The primary color being blue which often represents technology and the computer in the logo indicate what the society does.',
           component: <img
             style={style}
             src={`${process.env.PUBLIC_URL}/images/comp-soc.png`}
@@ -39,7 +39,7 @@ const GraphicDesign = () => {
         },
         {
           title: 'St. Paul\'s College Robotics Team Logo',
-          description: 'I helped the robotics team to design this logo in 2019. The robotic arm and gear show that robot being the main focus, and the orange color gives a delightful and industrial feeling to the logo.',
+          description: 'I helped the robotics team to design this logo in 2019. The robotic arm and gear show that robot is the main focus, and the orange color gives a cautious and industrial feeling to the logo.',
           component: <img
             style={style}
             src={`${process.env.PUBLIC_URL}/images/robotics.png`}
@@ -55,7 +55,7 @@ const GraphicDesign = () => {
         },
         {
           title: 'Solve Cube Poster',
-          description: 'This is a wallpaper I made for my phone in 2018 when I was most obsessed with Rubik\'s Cube. Different from other artwork in this list, this is done by digital painting.',
+          description: 'This is a wallpaper I made for my phone in 2018 when I was most obsessed with Rubik\'s Cube. Different from other artwork in this list, this is done by digital painting instead of vector arts.',
           component: <img
             style={style}
             src={`${process.env.PUBLIC_URL}/images/solve-it.png`}
