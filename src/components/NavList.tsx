@@ -3,7 +3,7 @@ import NavButton from './NavButton';
 
 const NavList = () => {
   const HEADINGS: Array<string> = [
-    'Lio Qing Yanzhang',
+    'Lio Qing',
     'Computer Skills',
     'Programming Projects',
   ];

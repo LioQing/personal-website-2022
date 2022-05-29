@@ -30,8 +30,9 @@ const InfoCard = ({ title, imageSrc, link, children }: Props) => {
         overflow: 'hidden',
         borderRadius: 12,
         width: 325,
-        margin: '12px auto',
+        margin: '25px auto',
         backgroundColor: themeColors[theme].frontBackground,
+        boxShadow: '0px 0px 16px #00000044',
       }}>
       <div style={{
         height: 325,
