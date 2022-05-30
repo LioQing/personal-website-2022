@@ -1,13 +1,9 @@
-import Body from './Body';
-
 const HorizLine = () => {
   return (
-    <Body>
-      <hr style={{
-        margin: '64px 0',
-      }}/>
-    </Body>
+    <hr style={{
+      margin: '64px auto',
+    }}/>
   );
-}
+};
 
 export default HorizLine;
