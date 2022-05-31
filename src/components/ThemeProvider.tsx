@@ -93,6 +93,7 @@ export const muiThemes = {
       },
       background: {
         default: '#eeeeee',
+        paper: '#ffffff',
       },
     },
   }),
@@ -113,6 +114,7 @@ export const muiThemes = {
       },
       background: {
         default: '#222222',
+        paper: '#121212',
       },
       mode: 'dark',
     },
