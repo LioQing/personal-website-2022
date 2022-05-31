@@ -29,12 +29,13 @@ const DynamicColumnList = ({ items, width }: { items: string[], width: number })
   }
 
   return (
-    <Container style={{
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      padding: 0,
-    }}>
+    <Container
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      }}
+      disableGutters >
       {columns.map((column, i) => (
         <List key={i}>
           {column.map((item, j) => (

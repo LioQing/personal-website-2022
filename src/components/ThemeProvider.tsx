@@ -37,6 +37,22 @@ const defaultMuiTheme = {
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: '8px',
+          transition: 'all 300ms ease',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: '8px',
+          transition: 'all 300ms ease',
+        },
+      },
+    },
   },
   typography: {
     fontFamily: 'Open Sans',
@@ -91,9 +107,9 @@ export const muiThemes = {
     },
     palette: {
       primary: {
-        light: '#22ff6d',
-        main: '#22fc5e',
-        dark: '#1bc94a',
+        light: '#22ff8d',
+        main: '#23ff7f',
+        dark: '#1bcc65',
       },
       background: {
         default: '#222222',

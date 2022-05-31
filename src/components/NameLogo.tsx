@@ -139,7 +139,7 @@ const NameLogoSvg = () => {
 
 const NameLogo = () => {
   return (
-    <Parallax translateY={[-30, 30]}>
+    <Parallax translateY={[-30, 30]} style={{ position: 'relative', zIndex: -1 }}>
       <Container style={{
         position: 'relative',
         height: '100vh',

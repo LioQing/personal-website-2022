@@ -15,15 +15,15 @@ const LioQing = () => {
         Languages: Chinese (Mandarin &#38; Cantonese), English
       </Typography>
 
-      <Container style={{ margin: '16px 0px', padding: 0 }}>
+      <Container style={{ margin: '16px 0px' }} disableGutters>
         <Tooltip title='GitHub Profile'>
-          <IconButton href='https://github.com/LioQing'>
+          <IconButton href='https://github.com/LioQing' style={{ margin: 'auto 4px'}}>
             <GitHubIcon fontSize='large' />
           </IconButton>
         </Tooltip>
 
         <Tooltip title='LinkedIn Profile'>
-          <IconButton href='https://www.linkedin.com/in/lioqyz'>
+          <IconButton href='https://www.linkedin.com/in/lioqyz' style={{ margin: 'auto 4px'}}>
             <LinkedInIcon fontSize='large' />
           </IconButton>
         </Tooltip>

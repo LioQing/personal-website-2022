@@ -6,6 +6,8 @@ const Sidebar = () => {
   const Headings: Array<string> = [
     'Lio Qing',
     'Computer Skills',
+    'Programming Projects',
+    'Graphic Design',
   ];
   
   const getCurrHeading = () => {

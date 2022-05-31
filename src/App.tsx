@@ -13,6 +13,8 @@ import Sidebar from './components/Sidebar';
 import NameLogo from './components/NameLogo';
 import LioQing from './components/LioQing';
 import ComputerSkills from './components/ComputerSkills';
+import ProgrammingProjects from './components/ProgrammingProjects';
+import GraphicDesign from './components/GraphicDesign';
 
 const App = () => {
   const [isSidebarShown, setIsSidebarShown] = useState(false);
@@ -25,6 +27,7 @@ const App = () => {
         <Stack style={{
           position: 'fixed',
           margin: '0px 36px',
+          zIndex: 1,
         }}>
           {/* sidebar toggle, theme toggle, back to top button */}
           <ControlButtons isSidebarShown={isSidebarShown} setIsSidebarShown={setIsSidebarShown} />
@@ -44,11 +47,15 @@ const App = () => {
         </Stack>
 
         {/* main content */}
-        <Container maxWidth='md'>
+        <Container maxWidth='md' style={{ marginBottom: '25vh' }}>
           <NameLogo />
           <LioQing />
           <HorizLine />
           <ComputerSkills />
+          <HorizLine />
+          <ProgrammingProjects />
+          <HorizLine />
+          <GraphicDesign />
           <HorizLine />
         </Container>
       </ParallaxProvider>
