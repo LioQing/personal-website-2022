@@ -1,70 +1,65 @@
-import { useEffect, useState } from 'react';
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
-import NameLogo from './components/NameLogo';
+import { useState } from 'react';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import Container from '@mui/material/Container';
+import UselessContainer from './components/UselessContainer';
+import CssBaseline from '@mui/material/CssBaseline';
+import Stack from '@mui/material/Stack';
+import Slide from '@mui/material/Slide';
+import Fade from '@mui/material/Fade';
+import ThemeProvider from './components/ThemeProvider';
+import ControlButtons from './components/ControlButtons';
+import HorizLine from './components/HorizLine';
 import Sidebar from './components/Sidebar';
-import NavList from './components/NavList';
-import SidebarToggle from './components/SidebarToggle';
-import ThemeToggle from './components/ThemeToggle';
-import BackToTopButton from './components/BackToTopButton';
-import ThemeContextProvider from './components/ThemeContextProvider';
-import Introduction from './components/Introduction';
+import NameLogo from './components/NameLogo';
+import LioQing from './components/LioQing';
 import ComputerSkills from './components/ComputerSkills';
 import ProgrammingProjects from './components/ProgrammingProjects';
 import GraphicDesign from './components/GraphicDesign';
-import HorizLine from './components/HorizLine';
-import Body from './components/Body';
-import { Helmet } from 'react-helmet';
-import { getThemeStyle, Theme } from './context/theme';
-import './styles.css';
 
 const App = () => {
-  const [theme, setTheme] = useState(Theme.Dark);
-  const [style, setStyle] = useState(getThemeStyle(theme));
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  useEffect(() => {
-    setStyle(getThemeStyle(theme));
-  }, [theme]);
+  const [isSidebarShown, setIsSidebarShown] = useState(false);
 
   return (
-    <>
-      <Helmet>
-        <style>{style}</style>
-      </Helmet>
+    <ThemeProvider>
       <ParallaxProvider>
-        <ThemeContextProvider theme={theme} setTheme={setTheme}>
-          <Body>
-            <Parallax translateY={[-28, 28]}>
-              <div style={{
-                position: 'relative',
-                height: '100vh',
-              }}>
-                <NameLogo theme={theme}/>
-              </div>
-            </Parallax>
-          </Body>
+        <CssBaseline />
 
-          <Sidebar isSidebarOpen={isSidebarOpen}>
-            <NavList />
-          </Sidebar>
-          <SidebarToggle isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-          <ThemeToggle />
-          <BackToTopButton />
+        <Stack style={{
+          position: 'fixed',
+          margin: '0px 36px',
+          zIndex: 1,
+        }}>
+          {/* sidebar toggle, theme toggle, back to top button */}
+          <ControlButtons isSidebarShown={isSidebarShown} setIsSidebarShown={setIsSidebarShown} />
 
-          <Introduction />
+          {/* sidebar */}
+          {
+            <Fade in={isSidebarShown} timeout={200} easing='ease'>
+              <UselessContainer>
+                <Slide direction="right" in={isSidebarShown} timeout={200} easing='ease' mountOnEnter unmountOnExit>
+                  <UselessContainer>
+                    <Sidebar />
+                  </UselessContainer>
+                </Slide>
+              </UselessContainer>
+            </Fade>
+          }
+        </Stack>
+
+        {/* main content */}
+        <Container maxWidth='md' style={{ marginBottom: '25vh' }}>
+          <NameLogo />
+          <LioQing />
           <HorizLine />
           <ComputerSkills />
           <HorizLine />
           <ProgrammingProjects />
           <HorizLine />
           <GraphicDesign />
-
-          <div style={{
-            height: '40vh',
-          }} />
-        </ThemeContextProvider>
+          <HorizLine />
+        </Container>
       </ParallaxProvider>
-    </>
+    </ThemeProvider>
   );
 };
 
