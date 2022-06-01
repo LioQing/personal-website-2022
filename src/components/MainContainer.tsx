@@ -6,7 +6,15 @@ interface Props {
 }
 
 const MainContainer = ({ children }: Props) => {
-  const [width, setWidth] = useState<'none' | number>(window.innerWidth);
+  const winWidth = window.innerWidth;
+  
+  const [width, setWidth] = useState<'none' | number>(
+    winWidth > 1350
+    ? 900
+    : winWidth > 1000
+    ? winWidth - 504 // 504 is the width of 2 sidebar
+    : 'none'
+  );
 
   useEffect(() => {
     const handleResize = () => {
