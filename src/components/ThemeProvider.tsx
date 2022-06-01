@@ -1,12 +1,8 @@
-import { useState, createContext } from 'react';
+import { useState } from 'react';
 import { createTheme } from '@mui/material/styles';
 import MuiThemeProvider from '@mui/material/styles/ThemeProvider';
 import OpenSans from '../assets/OpenSans.ttf';
-
-export enum Theme {
-  Light = 'light',
-  Dark = 'dark',
-}
+import { Theme, ThemeContext } from '../context/Theme';
 
 const defaultMuiTheme = {
   components: {
@@ -120,11 +116,6 @@ export const muiThemes = {
     },
   }),
 };
-
-export const ThemeContext = createContext({
-  theme: Theme.Light,
-  toggleTheme: () => {},
-});
 
 interface Props {
   children: React.ReactNode;

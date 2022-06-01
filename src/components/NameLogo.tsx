@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import Container from '@mui/material/Container';
-import { Theme, ThemeContext } from "./ThemeProvider";
+import { Theme, ThemeContext } from "../context/Theme";
 
 const NameLogoSvg = () => {
   const { theme } = useContext(ThemeContext);
@@ -11,7 +11,7 @@ const NameLogoSvg = () => {
       <style>
         {
           `.name-logo > * {
-            transition: all 200ms ease;
+            transition: all 300ms ease;
           }`
         }
       </style>

@@ -1,15 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
+import Slide from '@mui/material/Slide';
+import Fade from '@mui/material/Fade';
+import UselessContainer from './UselessContainer';
 
-const Sidebar = () => {
+interface Props {
+  isSidebarShown: boolean;
+  isPhone: boolean,
+}
+
+const Sidebar = ({ isSidebarShown, isPhone }: Props) => {
   const Headings: Array<string> = [
     'Lio Qing',
     'Computer Skills',
     'Programming Projects',
     'Graphic Design',
   ];
-  
+
+  const [currHeading, setCurrHeading] = useState(Headings[0]);
+
   const getCurrHeading = () => {
     for (const [i, h] of Headings.entries()) {
       const elem = document.getElementById(h);
@@ -28,35 +39,78 @@ const Sidebar = () => {
     return Headings[0];
   };
 
-  const [currHeading, setCurrHeading] = useState(getCurrHeading());
-
-  const updateCurrHeading = () => {
-    setCurrHeading(getCurrHeading());
-  };
-
-  window.addEventListener('scroll', () => {
-    updateCurrHeading();
+  useEffect(() => {
+    const updateCurrHeading = () => {
+      setCurrHeading(getCurrHeading());
+    };
+  
+    window.addEventListener('scroll', updateCurrHeading);
+    return () => window.removeEventListener('scroll', updateCurrHeading);
   });
 
+  if (isPhone) {
+    return (
+      <Slide
+        direction='down'
+        in={isSidebarShown}
+        timeout={200}
+        easing='ease'
+        unmountOnExit>
+        <UselessContainer style={{
+          position: 'fixed',
+          top: 56,
+          width: '100%'
+        }}>
+          <Paper style={{ borderTopLeftRadius: 0, borderTopRightRadius: 0 }} elevation={2}>
+            <List>
+              {Headings.map(h => (
+                <ListItemButton
+                  key={h}
+                  style={{
+                    transition: 'all 300ms ease',
+                  }}
+                  selected={currHeading === h}
+                  onClick={() => {
+                    window.location.href = `#${h}`;
+                    window.scrollBy(0, -32);
+                  }}>
+                  {h}
+                </ListItemButton>
+              ))}
+            </List>
+          </Paper>
+        </UselessContainer>
+      </Slide>
+    );
+  }
+
   return (
-    <List style={{ margin: 0, padding: 0, width: '200px' }}>
-      {Headings.map(h => (
-        <ListItemButton
-          key={h}
-          style={{
-            margin: '8px auto',
-            borderRadius: '8px',
-            transition: 'all 300ms ease',
-          }}
-          selected={currHeading === h}
-          onClick={() => {
-            window.location.href = `#${h}`;
-            window.scrollBy(0, -32);
-          }}>
-          {h}
-        </ListItemButton>
-      ))}
-    </List>
+    <Fade in={isSidebarShown} timeout={200} easing='ease'>
+      <UselessContainer>
+        <Slide direction="right" in={isSidebarShown} timeout={200} easing='ease' mountOnEnter unmountOnExit>
+          <UselessContainer>
+            <List style={{ margin: 0, padding: 0, width: '180px' }}>
+              {Headings.map(h => (
+                <ListItemButton
+                  key={h}
+                  style={{
+                    margin: '8px auto',
+                    borderRadius: '8px',
+                    transition: 'all 300ms ease',
+                  }}
+                  selected={currHeading === h}
+                  onClick={() => {
+                    window.location.href = `#${h}`;
+                    window.scrollBy(0, -32);
+                  }}>
+                  {h}
+                </ListItemButton>
+              ))}
+            </List>
+          </UselessContainer>
+        </Slide>
+      </UselessContainer>
+    </Fade>
   );
 };
 

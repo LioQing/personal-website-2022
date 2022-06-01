@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
@@ -39,11 +39,29 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, type, languages, tools, description, link, image }: ProjectCardProps) => {
   const [expanded, setExpanded] = useState(false);
+  const [width, setWidth] = useState(360);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const winWidth = window.innerWidth;
+
+      setWidth(
+        winWidth < 1350 && winWidth > 1100
+        ? 360 - Math.floor((1350 - winWidth) / 2)
+        : winWidth > 400
+        ? 360
+        : 360 - Math.floor((400 - winWidth) / 2)
+      );
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <Card style={{ width: '360px', overflow: 'hidden' }} raised>
-      <div style={{ width: '360px', height: '360px', overflow: 'hidden' }}>
-        <Parallax translateY={[-18, 6]}>
+    <Card style={{ width, overflow: 'hidden', transition: 'transform 0ms' }} raised>
+      <div style={{ width, height: width, overflow: 'hidden', transition: 'transform 0ms' }}>
+        <Parallax translateY={['-16%', '4%']}>
           <img
             style={{
               position: 'relative',
