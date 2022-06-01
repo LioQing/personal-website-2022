@@ -39,7 +39,15 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, type, languages, tools, description, link, image }: ProjectCardProps) => {
   const [expanded, setExpanded] = useState(false);
-  const [width, setWidth] = useState(360);
+  
+  const winWidth = window.innerWidth;
+  const [width, setWidth] = useState(
+    winWidth < 1350 && winWidth > 1100
+    ? 360 - Math.floor((1350 - winWidth) / 2)
+    : winWidth > 400
+    ? 360
+    : 360 - Math.floor((400 - winWidth) / 2)
+  );
 
   useEffect(() => {
     const handleResize = () => {

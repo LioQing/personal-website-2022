@@ -5,12 +5,11 @@ import Sidebar from './Sidebar';
 
 const Controls = () => {
   const [isSidebarShown, setIsSidebarShown] = useState(false);
-  const [isPhone, setIsPhone] = useState(false);
+  const [isPhone, setIsPhone] = useState(window.innerWidth < 1000);
 
   useEffect(() => {
     const handleResize = () => {
-      const winWidth = window.innerWidth;
-      setIsPhone(winWidth < 1000);
+      setIsPhone(window.innerWidth < 1000);
     };
 
     window.addEventListener('resize', handleResize);

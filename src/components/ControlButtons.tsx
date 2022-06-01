@@ -30,7 +30,7 @@ interface Props {
 
 const ControlButtons = ({ isSidebarShown, setIsSidebarShown, isPhone }: Props) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [isFirstPage, setIsFirstPage] = useState(true);
+  const [isFirstPage, setIsFirstPage] = useState(window.scrollY < window.innerHeight);
 
   useEffect(() => {
     const handleScroll = () => {
