@@ -8,10 +8,11 @@ import UselessContainer from './UselessContainer';
 
 interface Props {
   isSidebarShown: boolean;
-  isPhone: boolean,
+  setIsSidebarShown: (isSidebarShown: boolean) => void;
+  isPhone: boolean;
 }
 
-const Sidebar = ({ isSidebarShown, isPhone }: Props) => {
+const Sidebar = ({ isSidebarShown, setIsSidebarShown, isPhone }: Props) => {
   const Headings: Array<string> = [
     'Lio Qing',
     'Computer Skills',
@@ -72,7 +73,8 @@ const Sidebar = ({ isSidebarShown, isPhone }: Props) => {
                   selected={currHeading === h}
                   onClick={() => {
                     window.location.href = `#${h}`;
-                    window.scrollBy(0, -32);
+                    window.scrollBy(0, -88);
+                    setIsSidebarShown(false);
                   }}>
                   {h}
                 </ListItemButton>

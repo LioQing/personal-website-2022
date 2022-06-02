@@ -47,7 +47,7 @@ const ControlButtons = ({ isSidebarShown, setIsSidebarShown, isPhone }: Props) =
   return (
     <Container isPhone={isPhone}>
       <Stack direction='row' spacing={1} style={{ margin: isPhone ? '8px' : '32px 0px' }}>
-        <Tooltip title='Toggle Sidebar'>
+        <Tooltip title='Toggle Navigation Bar'>
           <IconButton onClick={() => setIsSidebarShown(!isSidebarShown)}>
             <MenuRoundedIcon />
           </IconButton>

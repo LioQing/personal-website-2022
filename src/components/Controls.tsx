@@ -27,7 +27,7 @@ const Controls = () => {
       <ControlButtons isSidebarShown={isSidebarShown} setIsSidebarShown={setIsSidebarShown} isPhone={isPhone} />
 
       {/* sidebar */}
-      <Sidebar isSidebarShown={isSidebarShown} isPhone={isPhone} />
+      <Sidebar isSidebarShown={isSidebarShown} setIsSidebarShown={setIsSidebarShown} isPhone={isPhone} />
     </Stack>
   );
 };
