@@ -67,8 +67,8 @@ const ProjectCard = ({ title, type, languages, tools, description, link, image }
   }, []);
 
   return (
-    <Card style={{ width, overflow: 'hidden', transition: 'transform 0ms' }} raised>
-      <div style={{ width, height: width, overflow: 'hidden', transition: 'transform 0ms' }}>
+    <Card style={{ width, overflow: 'hidden' }} raised>
+      <div style={{ width, height: width, overflow: 'hidden' }}>
         <Parallax translateY={['-16%', '4%']}>
           <img
             style={{

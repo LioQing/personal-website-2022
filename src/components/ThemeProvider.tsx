@@ -18,18 +18,10 @@ const defaultMuiTheme = {
         }
       `,
     },
-    MuiSvgIcon: {
-      styleOverrides: {
-        root: {
-          transition: 'all 300ms ease',
-        },
-      },
-    },
     MuiLink: {
       styleOverrides: {
         root: {
           fontStyle: 'italic',
-          transition: 'all 300ms ease',
         },
       },
     },
@@ -37,7 +29,6 @@ const defaultMuiTheme = {
       styleOverrides: {
         root: {
           borderRadius: '8px',
-          transition: 'all 300ms ease',
         },
       },
     },
@@ -45,7 +36,6 @@ const defaultMuiTheme = {
       styleOverrides: {
         root: {
           borderRadius: '8px',
-          transition: 'all 300ms ease',
         },
       },
     },
@@ -56,17 +46,14 @@ const defaultMuiTheme = {
       fontSize: '2.4rem',
       fontWeight: 900,
       margin: '32px auto',
-      transition: 'all 300ms ease',
     },
     h2: {
       fontSize: '1.4rem',
       fontWeight: 700,
       margin: '24px auto',
-      transition: 'all 300ms ease',
     },
     body1: {
       fontSize: '1.1rem',
-      transition: 'all 300ms ease',
     },
   },
 };

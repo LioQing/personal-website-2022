@@ -67,9 +67,6 @@ const Sidebar = ({ isSidebarShown, setIsSidebarShown, isPhone }: Props) => {
               {Headings.map(h => (
                 <ListItemButton
                   key={h}
-                  style={{
-                    transition: 'all 300ms ease',
-                  }}
                   selected={currHeading === h}
                   onClick={() => {
                     window.location.href = `#${h}`;
@@ -98,7 +95,6 @@ const Sidebar = ({ isSidebarShown, setIsSidebarShown, isPhone }: Props) => {
                   style={{
                     margin: '8px auto',
                     borderRadius: '8px',
-                    transition: 'all 300ms ease',
                   }}
                   selected={currHeading === h}
                   onClick={() => {
