@@ -24,6 +24,13 @@ jobs:
         run: |
           npm ci
           npm run build
+          
+      - name: add CNAME
+        run: |
+          cd ./build
+          touch CNAME
+          echo 'www.lioqing.tech' > CNAME
+          cd ..
       
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
