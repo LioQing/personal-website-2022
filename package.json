@@ -2,7 +2,7 @@
   "name": "web-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lioqing.github.io/web-portfolio/",
+  "homepage": "http://www.lioqing.tech/",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
