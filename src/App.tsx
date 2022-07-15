@@ -9,6 +9,7 @@ import LioQing from './components/LioQing';
 import ComputerSkills from './components/ComputerSkills';
 import ProgrammingProjects from './components/ProgrammingProjects';
 import GraphicDesign from './components/GraphicDesign';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
           <HorizLine />
           <GraphicDesign />
           <HorizLine />
+
+          <Footer />
         </MainContainer>
       </ParallaxProvider>
     </ThemeProvider>

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import Container from '@mui/material/Container';
 import { Theme, ThemeContext } from "../context/Theme";
@@ -138,11 +138,32 @@ const NameLogoSvg = () => {
 };
 
 const NameLogo = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <Parallax translateY={[-30, 30]} style={{ position: 'relative', zIndex: -1 }}>
+    <Parallax
+      translateY={[-32, 32]}
+      style={{
+        position: 'relative',
+        zIndex: -1,
+        top: width < 1000 ? '48px' : 'auto',
+        height: '120vh',
+      }}>
       <Container style={{
         position: 'relative',
         height: '100vh',
+        width: width < 1000 && width > height ? Math.min(height / width * 150, 100) + '%' : 'auto',
         display: 'flex',
         justifyContent: 'center',
       }}>

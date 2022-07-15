@@ -15,6 +15,9 @@ const LioQing = () => {
         Languages: Chinese (Mandarin &#38; Cantonese), English
       </Typography>
 
+      <Typography style={{ marginTop: '32px' }}>
+        My Other Social Profiles:
+      </Typography>
       <Container style={{ margin: '16px 0px' }} disableGutters>
         <Tooltip title='GitHub Profile'>
           <IconButton href='https://github.com/LioQing' style={{ margin: 'auto 4px'}}>

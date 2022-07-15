@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Section from './Section';
 
-const Artwork = ({ image, title, year }: { image: string, title: string, year: string }) => {
+const Artwork = ({ image, title, subtitle }: { image: string, title: string, subtitle: string }) => {
   return (
     <Container style={{ margin: '32px auto' }}>
       <Container
@@ -25,7 +25,7 @@ const Artwork = ({ image, title, year }: { image: string, title: string, year: s
         </Paper>
       </Container>
       <Typography variant='h2' style={{ margin: '0px 6px' }}>{title}</Typography>
-      <Typography style={{ margin: '1px 6px' }}>{year}</Typography>
+      <Typography style={{ margin: '1px 6px' }}>{subtitle}</Typography>
     </Container>
   );
 };
@@ -40,23 +40,23 @@ const GraphicDesign = () => {
       <Artwork 
         image={`${process.env.PUBLIC_URL}/images/comp-soc.png`}
         title={'St. Paul\'s College Computer Society Logo'}
-        year='2020' />
+        subtitle='2020, made with Illustrator' />
       <Artwork 
         image={`${process.env.PUBLIC_URL}/images/bio-soc.png`}
         title={'St. Paul\'s College Biology Society Logo'}
-        year='2020' />
+        subtitle='2020, made with Illustrator' />
       <Artwork 
         image={`${process.env.PUBLIC_URL}/images/robotics.png`}
         title={'St. Paul\'s College Robotics Team Logo'}
-        year='2020' />
+        subtitle='2020, made with Illustrator' />
       <Artwork 
         image={`${process.env.PUBLIC_URL}/images/cubing-wr.png`}
         title='Speed Cubing 3x3 World Record Poster'
-        year='2019' />
+        subtitle='2019, made with Illustrator' />
       <Artwork 
         image={`${process.env.PUBLIC_URL}/images/solve-it.png`}
         title='Solve Cube Poster'
-        year='2018' />
+        subtitle='2018, made with SAI and Photoshop' />
     </Section>
   );
 };

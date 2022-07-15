@@ -172,7 +172,7 @@ const ProgrammingProjects = () => {
             type='Utility Desktop Application'
             languages='TypeScript'
             tools='React, MUI'
-            description='Yes, it is this project. This is the first web project I did after I started learning web development frameworks and TypeScript.'
+            description='It is this website. This is the first web project I did after I started learning web development frameworks and TypeScript.'
             link='https://github.com/LioQing/web-portfolio'
             image={`${process.env.PUBLIC_URL}/images/LioQing-half.png`} />
         </div>
