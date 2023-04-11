@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.c5f74c3c.js",
+    "main.js": "/static/js/main.df9b5c3e.js",
     "static/media/OpenSans.ttf": "/static/media/OpenSans.a42bbe687810bdc6e9e8.ttf",
     "index.html": "/index.html",
-    "main.c5f74c3c.js.map": "/static/js/main.c5f74c3c.js.map"
+    "main.df9b5c3e.js.map": "/static/js/main.df9b5c3e.js.map"
   },
   "entrypoints": [
-    "static/js/main.c5f74c3c.js"
+    "static/js/main.df9b5c3e.js"
   ]
 }
