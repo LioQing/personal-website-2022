@@ -35,9 +35,10 @@ interface ProjectCardProps {
   description: string;
   link: string;
   image: string;
+  tryLink?: string;
 }
 
-const ProjectCard = ({ title, type, languages, tools, description, link, image }: ProjectCardProps) => {
+const ProjectCard = ({ title, type, languages, tools, description, link, image, tryLink }: ProjectCardProps) => {
   const [expanded, setExpanded] = useState(false);
   
   const winWidth = window.innerWidth;
@@ -86,12 +87,21 @@ const ProjectCard = ({ title, type, languages, tools, description, link, image }
           {title}
         </Typography>
       </CardContent>
-      <CardActions style={{ paddingLeft: '8px' }} disableSpacing>
+      <CardActions style={{ paddingLeft: '16px' }} disableSpacing>
         <Button
           href={link}
           variant='outlined'>
-          Source Code on GitHub
+          Source Code
         </Button>
+        {tryLink
+          ? <Button
+            style={{ marginLeft: '8px' }}
+            href={tryLink}
+            variant='outlined'>
+            Try It
+          </Button>
+          : null
+        }
         <ExpandMore
           expand={expanded}
           onClick={() => setExpanded(!expanded)}>
@@ -138,18 +148,26 @@ const ProgrammingProjects = () => {
         }}>
           <ProjectCard
             title='The Tank Arena'
-            type='Game'
+            type='Desktop Game'
             languages='C++'
             tools='SFML'
             description='Inspired by the Wii tank game, this is a summary of what I know about video game programming as I coded the entity, texture, physics and more components by myself.'
             link='https://github.com/LioQing/The-Tank-Arena'
             image={`${process.env.PUBLIC_URL}/images/the-tank-arena.png`} />
           <ProjectCard
+            title='Race AI'
+            type='Machine Learning Project'
+            languages='Python'
+            tools='PyGame, NumPy'
+            description='A personal project to create a self-driving car using evolutionary machin learning and neural networks.'
+            link='https://github.com/LioQing/RaceAI'
+            image={`${process.env.PUBLIC_URL}/images/race-ai.png`} />
+          <ProjectCard
             title='Tiny Terminal User Interface'
             type='TUI Library'
             languages='C++'
             tools='Linux System Libraries'
-            description='A lightweight TUI library I wrote to assist in my university project. Used many Linux library features for terminal input and output.'
+            description='A lightweight TUI library I wrote to assist in my university project. Used many Linux system library for terminal input and output.'
             link='https://github.com/LioQing/ttui'
             image={`${process.env.PUBLIC_URL}/images/ttui.png`} />
         </div>
@@ -168,10 +186,19 @@ const ProgrammingProjects = () => {
             link='https://github.com/LioQing/Everything-Daily'
             image={`${process.env.PUBLIC_URL}/images/everything-daily.png`} />
           <ProjectCard
+            title='Delivery in a Hearbeat'
+            type='Browser Game'
+            languages='C#'
+            tools='Unity'
+            description='A game made in Unity for a game jam. Me and my team made this game in 48 hours.'
+            link='https://github.com/LioQing/delivery-in-a-heartbeat'
+            image={`${process.env.PUBLIC_URL}/images/delivery-in-a-heartbeat.png`}
+            tryLink='https://lio-qing.itch.io/delivery-in-a-heartbeat' />
+          <ProjectCard
             title='Web Portfolio'
-            type='Utility Desktop Application'
+            type='Website'
             languages='TypeScript'
-            tools='React, MUI'
+            tools='ReactJS, MUI'
             description='It is this website. This is the first web project I did after I started learning web development frameworks and TypeScript.'
             link='https://github.com/LioQing/web-portfolio'
             image={`${process.env.PUBLIC_URL}/images/LioQing-half.png`} />

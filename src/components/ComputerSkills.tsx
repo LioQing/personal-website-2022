@@ -60,20 +60,21 @@ const ComputerSkills = () => {
   }, []);
 
   const languages = [
-    'C++',
-    'C#',
-    'C',
-    'Rust',
+    'C/C++',
+    'Java',
     'Python',
-    'JavaScript',
-    'TypeScript',
+    'Rust',
+    'JavaScript/TypeScript',
+    'Dart',
+    'HTML5/CSS',
     'Lua',
   ];
 
   const frameworks = [
-    'Windows Presentation Foundation (WPF)',
+    'ReactJS',
+    'Flutter',
+    'Yew',
     'Universal Windows Platform (UWP)',
-    'React',
     'Unity',
     'Unreal Engine',
   ];
@@ -81,7 +82,7 @@ const ComputerSkills = () => {
   const softwares = [
     'Editing - Photoshop, Illustrator, Premiere Pro',
     'Office - Word, Excel, PowerPoint',
-    'Coding - Visual Studio, Visual Studio Code, Rider, CLion',
+    'Coding - Visual Studio, Visual Studio Code, Rider, CLion, Intellij IDEA, PyCharm',
     'Modelling - Blender',
   ];
 
