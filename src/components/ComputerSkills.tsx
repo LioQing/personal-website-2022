@@ -61,6 +61,7 @@ const ComputerSkills = () => {
 
   const languages = [
     'C/C++',
+    'C#',
     'Java',
     'Python',
     'Rust',
