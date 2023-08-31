@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
@@ -11,6 +11,7 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Section from './Section';
+import { ThemeContext } from "../context/Theme";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -126,6 +127,8 @@ const ProjectCard = ({ title, type, languages, tools, description, link, image, 
 };
 
 const ProgrammingProjects = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <Section heading='Programming Projects'>
       <Typography>
@@ -163,13 +166,14 @@ const ProgrammingProjects = () => {
             link='https://github.com/LioQing/RaceAI'
             image={`${process.env.PUBLIC_URL}/images/race-ai.png`} />
           <ProjectCard
-            title='Tiny Terminal User Interface'
-            type='TUI Library'
-            languages='C++'
-            tools='Linux System Libraries'
-            description='A lightweight TUI library I wrote to assist in my university project. Used many Linux system library for terminal input and output.'
-            link='https://github.com/LioQing/ttui'
-            image={`${process.env.PUBLIC_URL}/images/ttui.png`} />
+            title='Code Shelf'
+            type='Tutorial Site'
+            languages='Python, JavaScript, TypeScript, Markdown'
+            tools='Manim, Docusaurus'
+            description='A coding tutorial site I created for learning computer science concepts, with animations and interactive components for better learning experience.'
+            link='https://github.com/LioQing/code-shelf'
+            image={`${process.env.PUBLIC_URL}/images/code-shelf-${theme}.png`}
+            tryLink='https://lioqing.com/code-shelf' />
         </div>
         <div style={{
           display: 'flex',
@@ -195,13 +199,14 @@ const ProgrammingProjects = () => {
             image={`${process.env.PUBLIC_URL}/images/delivery-in-a-heartbeat.png`}
             tryLink='https://lio-qing.itch.io/delivery-in-a-heartbeat' />
           <ProjectCard
-            title='Web Portfolio'
+            title='Personal Website'
             type='Website'
             languages='TypeScript'
-            tools='ReactJS, MUI'
+            tools='React, MUI'
             description='It is this website. This is the first web project I did after I started learning web development frameworks and TypeScript.'
-            link='https://github.com/LioQing/web-portfolio'
-            image={`${process.env.PUBLIC_URL}/images/LioQing-half.png`} />
+            link='https://github.com/LioQing/lioqing.github.io'
+            image={`${process.env.PUBLIC_URL}/images/personal-website-${theme}.png`}
+            tryLink='https://lioqing.com' />
         </div>
       </div>
     </Section>

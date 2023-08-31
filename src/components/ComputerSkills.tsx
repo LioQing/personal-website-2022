@@ -80,6 +80,13 @@ const ComputerSkills = () => {
     'Unreal Engine',
   ];
 
+  const databases = [
+    'Cassandra',
+    'MongoDB',
+    'Elasticsearch',
+    'PostgreSQL',
+  ];
+
   const softwares = [
     'Editing - Photoshop, Illustrator, Premiere Pro',
     'Office - Word, Excel, PowerPoint',
@@ -99,6 +106,13 @@ const ComputerSkills = () => {
       <Typography variant='h2'>Development Frameworks</Typography>
       <List>
         {frameworks.map((item, i) => (
+          <BulletItem key={i}>{item}</BulletItem>
+        ))}
+      </List>
+
+      <Typography variant='h2'>Databases</Typography>
+      <List>
+        {databases.map((item, i) => (
           <BulletItem key={i}>{item}</BulletItem>
         ))}
       </List>
