@@ -38,6 +38,14 @@ const GraphicDesign = () => {
       </Typography>
       
       <Artwork 
+        image={`${process.env.PUBLIC_URL}/images/bro-well.png`}
+        title={'Bro Well (兄井) Logo, Tribute to 兄丼宅'}
+        subtitle='2023, made with Blender and Illustrator' />
+      <Artwork 
+        image={`${process.env.PUBLIC_URL}/images/mountain-hike.png`}
+        title={'Mountain Hike Logo'}
+        subtitle='2023, made with Blender and Illustrator' />
+      <Artwork 
         image={`${process.env.PUBLIC_URL}/images/comp-soc.png`}
         title={'St. Paul\'s College Computer Society Logo'}
         subtitle='2020, made with Illustrator' />
