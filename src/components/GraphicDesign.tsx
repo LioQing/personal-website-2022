@@ -39,7 +39,7 @@ const GraphicDesign = () => {
       
       <Artwork 
         image={`${process.env.PUBLIC_URL}/images/bro-well.png`}
-        title={'Bro Well (兄井) Logo, Tribute to 兄丼宅'}
+        title={'Bro Well (兄井) Logo, Tribute to 兄井宅'}
         subtitle='2023, made with Blender and Illustrator' />
       <Artwork 
         image={`${process.env.PUBLIC_URL}/images/mountain-hike.png`}
