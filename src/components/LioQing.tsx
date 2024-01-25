@@ -10,7 +10,7 @@ const LioQing = () => {
   return (
     <Section heading='Lio Qing'>
       <Typography>
-        Current Education: Undergraduate at the University of Hong Kong<br />
+        Current Education: Year 3 Undergraduate at the University of Hong Kong Studying Bachelor of Engineering in Computer Science and Bachelor of Business Administration in Finance<br />
         Nationality: Hong Kong China<br />
         Languages: Chinese (Mandarin &#38; Cantonese), English
       </Typography>

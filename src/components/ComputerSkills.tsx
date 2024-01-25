@@ -60,31 +60,30 @@ const ComputerSkills = () => {
   }, []);
 
   const languages = [
-    'C/C++',
-    'C#',
-    'Java',
     'Python',
+    'C++',
+    'SQL',
+    'Java',
     'Rust',
+    'C#',
     'JavaScript/TypeScript',
-    'Dart',
-    'HTML5/CSS',
-    'Lua',
-  ];
-
-  const frameworks = [
-    'ReactJS',
-    'Flutter',
-    'Yew',
-    'Universal Windows Platform (UWP)',
-    'Unity',
-    'Unreal Engine',
+    'HTML',
+    'CSS',
   ];
 
   const databases = [
-    'Cassandra',
-    'MongoDB',
-    'Elasticsearch',
     'PostgreSQL',
+    'MySQL',
+    'Cassandra',
+  ];
+
+  const technologies = [
+    'Git',
+    'Django',
+    'Docker',
+    'Microsoft Azure',
+    'Google Cloud',
+    'React',
   ];
 
   const softwares = [
@@ -97,18 +96,11 @@ const ComputerSkills = () => {
   return (
     <Section heading='Computer Skills'>
       <Typography>
-        An overview of my computer skills including programming languages, development frameworks, and computer softwares I have worked with.
+        An overview of my computer skills including computer languages, software development technologies, and computer softwares I have worked with.
       </Typography>
       
-      <Typography variant='h2'>Programming Languages</Typography>
+      <Typography variant='h2'>Computer Languages</Typography>
       <DynamicColumnList items={languages} width={viewportWidth} />
-
-      <Typography variant='h2'>Development Frameworks</Typography>
-      <List>
-        {frameworks.map((item, i) => (
-          <BulletItem key={i}>{item}</BulletItem>
-        ))}
-      </List>
 
       <Typography variant='h2'>Databases</Typography>
       <List>
@@ -116,6 +108,9 @@ const ComputerSkills = () => {
           <BulletItem key={i}>{item}</BulletItem>
         ))}
       </List>
+
+      <Typography variant='h2'>Software Development Technologies</Typography>
+      <DynamicColumnList items={technologies} width={viewportWidth} />
 
       <Typography variant='h2'>Computer Softwares</Typography>
       <List>
