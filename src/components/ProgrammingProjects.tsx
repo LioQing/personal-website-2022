@@ -160,9 +160,9 @@ const ProgrammingProjects = () => {
             date='Dec 2023'
             techs='Django, React, Docker, PostgreSQL, Microsoft Azure, Google Cloud'
             description='A web application for simple containerized generative AI pipeline prototyping, with support for popular services such as OpenAI ChatGPT, Google Gemini Pro.'
-            link='https://github.com/LioQing/lioqing.github.io'
+            link='https://github.com/LioQing/chat-conductor'
             image={`${process.env.PUBLIC_URL}/images/chat-conductor.png`}
-            tryLink='https://lioqing.com' />
+            tryLink='http://chat-conductor.lioqing.com' />
           <ProjectCard
             title='Race AI'
             type='Machine Learning Project'
