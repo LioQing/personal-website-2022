@@ -1,7 +1,7 @@
-# [Lio's Website](https://lioqing.com/)
+# [Lio's Website](https://www.lioqing.com/)
 
 ![issues](https://img.shields.io/github/issues/LioQing/lioqing.github.io)
-![webiste](https://img.shields.io/website?url=https%3A%2F%2Flioqing.com%2F)
+![webiste](https://img.shields.io/website?url=https%3A%2F%2Fwww.lioqing.com%2F)
 ![build](https://img.shields.io/github/actions/workflow/status/LioQing/lioqing.github.io/main.yml)
 ![size](https://img.shields.io/github/repo-size/LioQing/lioqing.github.io)
 

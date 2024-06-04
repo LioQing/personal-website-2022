@@ -161,8 +161,7 @@ const ProgrammingProjects = () => {
             techs='Django, React, Docker, PostgreSQL, Microsoft Azure, Google Cloud'
             description='A web application for simple containerized generative AI pipeline prototyping, with support for popular services such as OpenAI ChatGPT, Google Gemini Pro.'
             link='https://github.com/LioQing/chat-conductor'
-            image={`${process.env.PUBLIC_URL}/images/chat-conductor.png`}
-            tryLink='http://chat-conductor.lioqing.com' />
+            image={`${process.env.PUBLIC_URL}/images/chat-conductor.png`} />
           <ProjectCard
             title='Race AI'
             type='Machine Learning Project'
@@ -197,7 +196,7 @@ const ProgrammingProjects = () => {
             description='A coding tutorial site I created for learning computer science concepts, with animations and interactive components for better learning experience.'
             link='https://github.com/LioQing/code-shelf'
             image={`${process.env.PUBLIC_URL}/images/code-shelf-${theme}.png`}
-            tryLink='https://lioqing.com/code-shelf' />
+            tryLink='https://www.lioqing.com/code-shelf' />
           <ProjectCard
             title='Delivery in a Hearbeat'
             type='Browser Game'
