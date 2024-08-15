@@ -89,6 +89,7 @@ const ProjectCard = ({ title, type, languages, date, techs, description, link, i
           {title}
         </Typography>
         <Typography variant='body2' style={{ margin: 0 }}>
+          {type}<br />
           {date}
         </Typography>
       </CardContent>
@@ -117,7 +118,6 @@ const ProjectCard = ({ title, type, languages, date, techs, description, link, i
         <CardContent style={{ paddingTop: '0px' }}>
           <hr />
           <Typography>
-            Type: {type}<br />
             Languages: {languages}<br />
             Techs: {techs}<br />
             <br />
@@ -153,6 +153,15 @@ const ProgrammingProjects = () => {
           rowGap: '32px',
           padding: 0,
         }}>
+          <ProjectCard
+            title='Deck Programming Language'
+            type='Programming Language & Interpreter'
+            languages='Rust'
+            date='Jul 2024'
+            techs='N/A'
+            description='A functional programming language where the only operation the programmer need is assignment.'
+            link='https://github.com/LioQing/deck'
+            image={`${process.env.PUBLIC_URL}/images/deck.png`} />
           <ProjectCard
             title='Chat Conductor'
             type='AI Pipeline Prototyping Web Application'
@@ -207,6 +216,15 @@ const ProgrammingProjects = () => {
             link='https://github.com/LioQing/delivery-in-a-heartbeat'
             image={`${process.env.PUBLIC_URL}/images/delivery-in-a-heartbeat.png`}
             tryLink='https://lio-qing.itch.io/delivery-in-a-heartbeat' />
+          <ProjectCard
+            title='Tiny Terminal User Interface'
+            type='TUI Library'
+            languages='C++'
+            date='May 2022'
+            techs='Linux System Libraries'
+            description='A lightweight TUI library I wrote to assist in my university project. Used many Linux system libraries for terminal input and output.'
+            link='https://github.com/LioQing/ttui'
+            image={`${process.env.PUBLIC_URL}/images/ttui.png`} />
           <ProjectCard
             title='The Tank Arena'
             type='Game'

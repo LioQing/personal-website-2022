@@ -1,10 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import CircleIcon from '@mui/icons-material/Circle';
+import PythonOriginal from 'devicons-react/lib/icons/PythonOriginal';
+import CplusplusOriginal from 'devicons-react/lib/icons/CplusplusOriginal';
+import AzuresqldatabaseOriginal from 'devicons-react/lib/icons/AzuresqldatabaseOriginal';
+import JavaOriginal from 'devicons-react/lib/icons/JavaOriginal';
+import RustOriginal from 'devicons-react/lib/icons/RustOriginal';
+import CsharpOriginal from 'devicons-react/lib/icons/CsharpOriginal';
+import TypescriptOriginal from 'devicons-react/lib/icons/TypescriptOriginal';
+import Html5Original from 'devicons-react/lib/icons/Html5Original';
+import HaskellOriginal from 'devicons-react/lib/icons/HaskellOriginal';
+import GitOriginal from 'devicons-react/lib/icons/GitOriginal';
+import DjangoPlain from 'devicons-react/lib/icons/DjangoPlain';
+import DockerOriginal from 'devicons-react/lib/icons/DockerOriginal';
+import AzureOriginal from 'devicons-react/lib/icons/AzureOriginal';
+import GooglecloudOriginal from 'devicons-react/lib/icons/GooglecloudOriginal';
+import DotnetcoreOriginal from 'devicons-react/lib/icons/DotnetcoreOriginal';
 import Section from './Section';
+import { ThemeContext } from "../context/Theme";
 
 const BulletItem = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -19,7 +35,7 @@ const BulletItem = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const DynamicColumnList = ({ items, width }: { items: string[], width: number }) => {
+const DynamicColumnList = ({ items, width }: { items: [React.ReactNode | null, string][], width: number }) => {
   const columnCount = width < 400 ? 1 : width < 600 ? 2 : 3;
   const columnItemCount = Math.ceil(items.length / columnCount);
 
@@ -38,8 +54,13 @@ const DynamicColumnList = ({ items, width }: { items: string[], width: number })
       disableGutters >
       {columns.map((column, i) => (
         <List key={i}>
-          {column.map((item, j) => (
-            <BulletItem key={j}>{item}</BulletItem>
+          {column.map(([lead, item], j) => (
+            <ListItem key={j}>
+              {lead}
+              <Typography style={{ marginLeft: '8px' }}>
+                {item}
+              </Typography>
+            </ListItem>
           ))}
         </List>
       ))}
@@ -48,6 +69,7 @@ const DynamicColumnList = ({ items, width }: { items: string[], width: number })
 };
 
 const ComputerSkills = () => {
+  const { theme } = useContext(ThemeContext);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -60,31 +82,25 @@ const ComputerSkills = () => {
   }, []);
 
   const languages = [
-    'Python',
-    'C++',
-    'SQL',
-    'Java',
-    'Rust',
-    'C#',
-    'JavaScript/TypeScript',
-    'HTML',
-    'CSS',
-  ];
-
-  const databases = [
-    'PostgreSQL',
-    'MySQL',
-    'Cassandra',
-  ];
+    [<PythonOriginal size={36} />, 'Python'],
+    [<CplusplusOriginal size={36} />, 'C++'],
+    [<AzuresqldatabaseOriginal size={36} />, 'SQL'],
+    [<JavaOriginal size={36} />, 'Java'],
+    [<RustOriginal size={36} fill={theme === 'light' ? undefined : 'white'} />, 'Rust'],
+    [<CsharpOriginal size={36} />, 'C#'],
+    [<TypescriptOriginal size={36} />, 'TypeScript'],
+    [<Html5Original size={36} />, 'HTML'],
+    [<HaskellOriginal size={36} />, 'Haskell'],
+  ] as [React.ReactNode | null, string][];
 
   const technologies = [
-    'Git',
-    'Django',
-    'Docker',
-    'Microsoft Azure',
-    'Google Cloud',
-    'React',
-  ];
+    [<GitOriginal size={36} />, 'Git'],
+    [<DjangoPlain size={36} />, 'Django'],
+    [<DockerOriginal size={36} />, 'Docker'],
+    [<AzureOriginal size={36} />, 'Microsoft Azure'],
+    [<GooglecloudOriginal size={36} />, 'Google Cloud'],
+    [<DotnetcoreOriginal size={36} />, 'ASP.NET Core'],
+  ] as [React.ReactNode | null, string][];
 
   const softwares = [
     'Editing - Photoshop, Illustrator, Premiere Pro',
@@ -101,13 +117,6 @@ const ComputerSkills = () => {
       
       <Typography variant='h2'>Computer Languages</Typography>
       <DynamicColumnList items={languages} width={viewportWidth} />
-
-      <Typography variant='h2'>Databases</Typography>
-      <List>
-        {databases.map((item, i) => (
-          <BulletItem key={i}>{item}</BulletItem>
-        ))}
-      </List>
 
       <Typography variant='h2'>Software Development Technologies</Typography>
       <DynamicColumnList items={technologies} width={viewportWidth} />
