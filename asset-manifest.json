@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.63bf2d8c.js",
-    "static/media/OpenSans.ttf": "/static/media/OpenSans.a42bbe687810bdc6e9e8.ttf",
-    "index.html": "/index.html",
-    "main.63bf2d8c.js.map": "/static/js/main.63bf2d8c.js.map"
+    "main.js": "/personal-website-2022/static/js/main.83b9efde.js",
+    "static/media/OpenSans.ttf": "/personal-website-2022/static/media/OpenSans.a42bbe687810bdc6e9e8.ttf",
+    "index.html": "/personal-website-2022/index.html",
+    "main.83b9efde.js.map": "/personal-website-2022/static/js/main.83b9efde.js.map"
   },
   "entrypoints": [
-    "static/js/main.63bf2d8c.js"
+    "static/js/main.83b9efde.js"
   ]
 }
